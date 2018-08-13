@@ -9,10 +9,11 @@ const wrap = (string, maxLength) => {
     let newArray = [];
 
     for (let i = 0; i < ourArray.length; i++){
-      let currEl = ourArray[i];
-      charTotal += currEl.length + 1;
-      if (charTotal <= maxLength){
-        newArray.push(currEl);
+      let currEl = ourArray[i];     // curreEl = Monday
+      charTotal += currEl.length;
+      if (charTotal <= maxLength){  // charTotal =  15, maxLenth = 15
+        charTotal++ // to be the space after a word  // charTotal = 16
+        newArray.push(currEl); // Total, is, Monday
       } else {
         newArray.push('\n');
         charTotal = 0;

@@ -17,8 +17,13 @@ describe('wrap', () => {
   it('returns line break at correct spot if maxLength occurs on a space', () => {
     expect(wrap("Today is Monday", 9)).to.equal("Today is \n Monday");
   });
+
   it('returns line break before word that contains the index equivalent to maxLength', () => {
     expect(wrap("Today is Monday", 14)).to.equal("Today is \n Monday");
   });
-});
+
+  it('returns a column of single words if maxlength is less than the length of any word', () => {
+    expect(wrap("Today likes Monday", 2)).to.equal("\n Today \n likes \n Monday");
+  });
+})
 
